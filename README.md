@@ -16,7 +16,6 @@
 
 #### Related Repos
 
-- [Simple-ReID](https://github.com/guxinqian/Simple-ReID)
 - [fast-reid](https://github.com/JDAI-CV/fast-reid)
 - [deep-person-reid](https://github.com/KaiyangZhou/deep-person-reid)
 - [Pytorch ReID](https://github.com/layumi/Person_reID_baseline_pytorch)
