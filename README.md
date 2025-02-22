@@ -1,5 +1,5 @@
-### A Simple Codebase for Clothes-Changing Person Re-identification.
-####  [Clothes-Changing Person Re-identification with RGB Modality Only (CVPR, 2022)](https://arxiv.org/abs/2204.06890)
+## Ought to be Salient and Hidden:Soft Biological Semantic-Guided Explicit-Implicit Learning for Cloth-Changing Person Re-Identification
+### Journal: The Visual Computer
 
 #### Requirements
 - Python 3.6
@@ -7,25 +7,34 @@
 - yacs
 - apex
 
-#### CCVID Dataset
-- [[BaiduYun]](https://pan.baidu.com/s/1W9yjqxS9qxfPUSu76JpE1g) password: q0q2
-- [[GoogleDrive]](https://drive.google.com/file/d/1vkZxm5v-aBXa_JEi23MMeW4DgisGtS4W/view?usp=sharing)
+#### Dataset
 
+The relevant dataset can be downloaded through the following link
+- LTCC is available at [Here](https://naiq.github.io/LTCC_Perosn_ReID.html)
+- PRCC is available at [Here](https://drive.google.com/file/d/1yTYawRm4ap3M-j0PjLQJ--xmZHseFDLz/view)
 #### Get Started
-- Replace `_C.DATA.ROOT` and `_C.OUTPUT` in `configs/default_img.py&default_vid.py`with your own `data path` and `output path`, respectively.
-- Run `script.sh`
+
+Replace `_C.DATA.ROOT` and `_C.OUTPUT` in `configs/default_img.py`with your own `data path` and `output path`, respectively.
+
+For LTCC:
+```
+python -m torch.distributed.launch --nproc_per_node=2 --master_port 12345 main.py --dataset ltcc --cfg configs/res50_cels_cal.yaml --gpu 0,1 
+```
+For PRCC:
+```
+python -m torch.distributed.launch --nproc_per_node=2 --master_port 12345 main.py --dataset prcc --cfg configs/res50_cels_cal.yaml --gpu 0,1 
+```
+For VC-Clothes:
+```
+python -m torch.distributed.launch --nproc_per_node=2 --master_port 12345 main.py --dataset vcclothes --cfg configs/res50_cels_cal.yaml --gpu 0,1 
+python -m torch.distributed.launch --nproc_per_node=2 --master_port 12345 main.py --dataset vcclothes_cc --cfg configs/res50_cels_cal.yaml --gpu 0,1 --eval --resume /Your Dataset Path/Your Model Path/ 
+python -m torch.distributed.launch --nproc_per_node=2 --master_port 12345 main.py --dataset vcclothes_sc --cfg configs/res50_cels_cal.yaml --gpu 0,1 --eval --resume /Your Dataset Path/Your Model Path/ 
+```
 
 
 #### Citation
 
-If you use our code/dataset in your research or wish to refer to the baseline results, please use the following BibTeX entry.
-    
-    @inproceedings{gu2022CAL,
-        title={Clothes-Changing Person Re-identification with RGB Modality Only},
-        author={Gu, Xinqian and Chang, Hong and Ma, Bingpeng and Bai, Shutao and Shan, Shiguang and Chen, Xilin},
-        booktitle={CVPR},
-        year={2022},
-    }
+
 
 #### Related Repos
 
@@ -33,4 +42,11 @@ If you use our code/dataset in your research or wish to refer to the baseline re
 - [fast-reid](https://github.com/JDAI-CV/fast-reid)
 - [deep-person-reid](https://github.com/KaiyangZhou/deep-person-reid)
 - [Pytorch ReID](https://github.com/layumi/Person_reID_baseline_pytorch)
+
+
+
+
+
+
+
 
