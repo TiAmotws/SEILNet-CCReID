@@ -15,6 +15,7 @@ The relevant dataset can be downloaded through the following link
 ### Get Started
 
 Replace `_C.DATA.ROOT` and `_C.OUTPUT` in `configs/default_img.py`with your own `data path` and `output path`, respectively.
+According to different datasets, run the following commands on the console to start training:
 
 For LTCC:
 ```
