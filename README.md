@@ -6,6 +6,7 @@
 - Pytorch 1.6.0
 - yacs
 - apex
+  (remind: the apex is optional, not recommended if you have enough GPU memory; just comment all amp related codes)
 
 ### Dataset
 
